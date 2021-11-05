@@ -7,7 +7,7 @@ API 사용에 대해 궁금한 점은 슬랙 '질의응답' 채널에 질문 남
 
 ## 요구사항
 
-![Notion Workspace Screenshot]()
+![Notion Workspace Screenshot](https://raw.githubusercontent.com/KDT1-FE/JS-Mission3/main/_assets/notion-clone.jpg?token=AD7IBKXQJ27S5UUFLGDZ4XLBQT424)
 
 ### 필수 요구사항
 
@@ -30,7 +30,7 @@ API 사용에 대해 궁금한 점은 슬랙 '질의응답' 채널에 질문 남
 - [ ] SCSS, Bootstrap 등을 구성해 프로젝트를 최대한 예쁘게(?) 만들어 보세요.(2점)
 
 현재 워크스페이스의 경로 표시
-![현재 워크스페이스 경로 표시]()
+![현재 워크스페이스 경로 표시](https://raw.githubusercontent.com/KDT1-FE/JS-Mission3/main/_assets/notion-clone-header.jpg?token=AD7IBKT6SQWBOHREVHMLEZ3BQT5ES)
 
 ## API 사용법
 
