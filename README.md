@@ -35,7 +35,7 @@ API 사용에 대해 궁금한 점은 슬랙 '질의응답' 채널에 질문 남
 
 ## API 사용법
 
-- 요청 주소(Endpoint): `https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces`
+- 요청 주소(Endpoint): `https://asia-northeast3-heropy-api.cloudfunctions.net/api/notion/workspaces`
 
 모든 API 요청(Request) `headers`에 다음 정보가 꼭 포함되어야 합니다.<br>
 `username`은 다른 사람과 겹치지 않도록 주의하세요!<br>
@@ -77,7 +77,7 @@ async function createWorkspace() {
 
 ```curl
 curl -X 'GET' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/notion/workspaces
 ```
 
 ```plaintext
@@ -117,7 +117,7 @@ undefined
 
 ```curl
 curl -X 'GET' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
 ```
 
 ```plaintext
@@ -153,7 +153,7 @@ undefined
 
 ```curl
 curl -X 'POST' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
 ```
 
 ```plaintext
@@ -189,7 +189,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspa
 
 ```curl
 curl -X 'PUT' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
 ```
 
 ```plaintext
@@ -226,7 +226,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspa
 
 ```curl
 curl -X 'DELETE' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/notion/workspaces/:workspaceId
 ```
 
 ```plaintext
