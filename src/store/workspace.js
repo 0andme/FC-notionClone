@@ -5,21 +5,34 @@ export default{
   state:()=>({
     allSpaceList:[]
   }),
-  getters:{},
   mutations:{
     updateData(state,data){
       state.allSpaceList=[...data]
-
-    },
+    }
   },
   actions:{
-    async getAlldata({state,commit}){
+    //- get
+    async getAlldata({commit}){
       getAllWorkspace()
         .then(data=>{
-            commit('updateData',data)
-          
+          commit('updateData',data)          
         })
     },
+    // - add
+    async addWorkspace({commit,dispatch},payload){
+      // payload= {parentId, title, content}
+      postWorkspace(payload).then((data)=>{
+        this.dispatch('getAlldata')
+      })
+
+    },
+    //- del
+    async delWorkspace({commit,dispatch},payload){
+      const {spaceId}=payload
+      deleteWorkspace(spaceId).then(()=>{
+        this.dispatch('getAlldata')
+      })
+    }
 
   }
 }
