@@ -21,7 +21,7 @@ export default {
       
     }
   },
-  mounted(){
+  created(){
     // 데이터 가져오기
       this.$store.dispatch('getAlldata')
       
