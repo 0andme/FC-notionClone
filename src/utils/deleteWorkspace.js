@@ -3,17 +3,13 @@
 import{apiURL,headers}from'~/utils/apiInfo'
 import axios from 'axios'
 
-export async function deleteWorkspace(workspceId) {
+export async function deleteWorkspace(workspaceId) {
   const { data } = await axios({
-    url: `${apiURL}/${workspceId}`,
+    url: `${apiURL}/${workspaceId}`,
     method: 'DELETE',
     headers: headers,
-    data:{
-      title,
-      content
-    }
   })
-  console.log('수정',data)
+  // console.log('del',data)
   // data= 워크스페이스 삭제 여부
   return data
 }
