@@ -1,5 +1,5 @@
 <template>
-  <main @click.self="updateSpace" >
+  <main class="scroll" @click.self="updateSpace" >
     <div v-if="!isSelect() | !this.$store.getters.listSize>0">
       <GuideNotion/>
       </div>
@@ -83,6 +83,7 @@ main{
   bottom: 0;
   padding: 96px;
   box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 </style>
