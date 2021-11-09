@@ -8,7 +8,7 @@ export async function getOneWorkspace(workspaceId){
     method: 'GET',
     headers: headers,
   })
-  console.log('단일',data)
+  // console.log('단일',data)
   // data= [ { 아이디, 타이틀, 상세내용, 자식 항목 배열[{아이디,타이들}]},,{ } ]
   return data
 }
