@@ -17,7 +17,7 @@
   </header>
   <div  class="workspaceWrap">
     <!-- 워크스페이스 헤더 -->
-    <div class="workspaceHeader" @mouseover.self="isHover=true" @mouseleave.self="isHover=false" >
+    <div @click="spaceSelect" class="workspaceHeader" @mouseover.self="isHover=true" @mouseleave.self="isHover=false" >
       <span>WORKSPACE</span>
       <!-- 워크스페이스 추가 컴포넌트 -->
       <AddWorkspace :parentId='undefined' :isHover="isHover"  @changeIsHover='changeIsHover'/>
@@ -50,6 +50,10 @@ export default {
   methods:{
     changeIsHover(state){
       this.isHover=state
+    },
+     spaceSelect(){      
+      this.$store.dispatch('getClickedSpace','gotoGuide')
+      
     }  
   }
   

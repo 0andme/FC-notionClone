@@ -2,7 +2,7 @@
 <NotionSidebar/>
 <!-- NotionTopbar버튼이 눌리면 사이드바 열리게 열리고 나면 버튼은 사라져야함 -->
 <!-- <NotionTopbar/> -->
-<!-- <NotionFrame/> -->
+<NotionFrame/>
 </template>
 
 <script>
