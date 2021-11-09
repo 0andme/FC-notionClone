@@ -1,8 +1,7 @@
 <template>
   <main @click.self="updateSpace" >
     <div v-if="!isSelect() | !this.$store.getters.listSize>0">
-      <!-- <GuideNotion/> -->
-      ㅋㅋ
+      <GuideNotion/>
       </div>
     <div v-else >
     <div @input="getSpaceTitle" class="spaceTitle" placeholder='제목없음' contenteditable="true">{{selectedPage.title}}</div>
@@ -13,6 +12,9 @@
 <script>
 import GuideNotion from "../components/GuideNotion"
 export default {
+  components:{
+    GuideNotion
+  },
   computed:{
     selectedPage(){
  
