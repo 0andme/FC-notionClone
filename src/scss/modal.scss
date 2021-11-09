@@ -43,9 +43,12 @@
       flex-direction: column;
       align-items: flex-start;
       button{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
         font-size: 1.5rem;
         padding: 4px;
-        i{width: 30px;height: 30px;text-align: center;}
+        i{width: 25px;height: 30px;text-align: center;}
         &:hover{background-color: rgba(55,53,47,.08);}
         span{margin-left: 10px;}
       }

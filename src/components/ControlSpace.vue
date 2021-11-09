@@ -9,7 +9,7 @@
       </div>
     </template>
     <template #default>
-      <button><i class="fas fa-edit"></i><span>제목 바꾸기</span></button>
+      <button><i class="fas fa-pen"></i><span>제목 바꾸기</span></button>
       <button @click="delSpace"><i class="far fa-trash-alt"></i><span>삭제</span></button>
     </template>
   </TheModal>
