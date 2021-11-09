@@ -25,7 +25,7 @@
       </template>
     </div>
     <!-- 자식 컴포넌트 없을 경우 -->
-    <div :class="[`space  scroll child${deepth}th`]" v-else><span>하위 페이지가 없습니다</span></div>
+    <div :class="[`space  scroll child${deepth}th`]" v-else><span class="nochildMsg" >하위 페이지가 없습니다</span></div>
   </template>
 
   

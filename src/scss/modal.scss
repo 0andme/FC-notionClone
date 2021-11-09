@@ -45,6 +45,7 @@
       button{
         font-size: 1.5rem;
         padding: 4px;
+        i{width: 30px;height: 30px;text-align: center;}
         &:hover{background-color: rgba(55,53,47,.08);}
         span{margin-left: 10px;}
       }

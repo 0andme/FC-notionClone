@@ -94,7 +94,7 @@
  
         }
         @mixin nochildMsg {
-          span{
+          .nochildMsg{
             padding-left: 25px;
             color:#868e96;
             font-size: .8rem;
