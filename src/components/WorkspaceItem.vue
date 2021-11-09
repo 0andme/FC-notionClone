@@ -1,6 +1,5 @@
 <template>
 <div :class="[`space child${deepth}th `]" @mouseover.self="isHover=true" @mouseleave.self="isHover=false">
-  <!-- <div > -->
   <!-- 토글 버튼 -->
   <div class="btn toggle">
     <button  @click="isOpen=!isOpen">
@@ -9,7 +8,7 @@
   </button>
   </div>
   <!-- 워크 스페이스 타이틀 -->
-  <span class="title">{{space.title}}</span>
+  <span @click="spaceSelect" class="title scroll">{{space.title}}</span>
   <!-- 워크스페이스 수정 삭제 컴포넌트 -->
   <ControlSpace :space="space" :parentId='parentId' :isHover="isHover"  @changeIsHover='changeIsHover'/>
   <!-- 워크스페이스 추가 컴포넌트 -->
@@ -64,6 +63,10 @@ export default {
     changeIsHover(state){
       this.isHover=state
     },
+    spaceSelect(){      
+      this.$store.dispatch('getClickedSpace',this.space.id)
+      
+    }
   }
   
   
