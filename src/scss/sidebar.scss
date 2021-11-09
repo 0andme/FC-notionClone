@@ -75,16 +75,7 @@
     .workspaceList{
       overflow-y: scroll;
       // padding: 0 10px;
-      &.scroll {
-          -ms-overflow-style: none;
-          /* Internet Explorer */
-          scrollbar-width: none;
-          /* Firefox 64 */
-      }
-      &.scroll::-webkit-scrollbar {
-          /* 크롬 사파리*/
-          display: none;
-      }
+      
       // 단일 워크스페이스
       
       .space{
@@ -98,21 +89,25 @@
           flex-grow: 1;
           color: #343a40;
           overflow-x: scroll;
-          &.scroll {
-            -ms-overflow-style: none;
-            /* Internet Explorer */
-            scrollbar-width: none;
-            /* Firefox 64 */
+ 
         }
-        &.scroll::-webkit-scrollbar {
-            /* 크롬 사파리*/
-            display: none;
-        }
+        @mixin nochildMsg {
+          span{
+            padding-left: 25px;
+            color:#868e96;
+            font-size: .8rem;
+          }
+          &.scroll{
+            overflow-x:scroll
+
+          }
+          
         }
         &:hover{background-color: rgba(55,53,47,.08);}
-        &.child1th{padding-left: 25px}
-        &.child2th{padding-left: calc(25*2px)}
-        &.child3th{padding-left: calc(25*3px)}
+        &.child0th{@include nochildMsg()}
+        &.child1th{padding-left: 25px; @include nochildMsg()}
+        &.child2th{padding-left: calc(25*2px);@include nochildMsg()}
+        &.child3th{padding-left: calc(25*3px);@include nochildMsg()}
       }
       
     }
@@ -138,4 +133,14 @@
       }
     }
   }
+}
+.scroll {
+  -ms-overflow-style: none;
+  /* Internet Explorer */
+  scrollbar-width: none;
+  /* Firefox 64 */
+}
+.scroll::-webkit-scrollbar {
+  /* 크롬 사파리*/
+  display: none;
 }

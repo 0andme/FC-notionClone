@@ -8,7 +8,7 @@
   </button>
   </div>
   <!-- 워크 스페이스 타이틀 -->
-  <span @click="spaceSelect" class="title scroll">{{space.title}}</span>
+  <p @click="spaceSelect" class="title scroll">{{space.title}}</p>
   <!-- 워크스페이스 수정 삭제 컴포넌트 -->
   <ControlSpace :space="space" :parentId='parentId' :isHover="isHover"  @changeIsHover='changeIsHover'/>
   <!-- 워크스페이스 추가 컴포넌트 -->
@@ -25,7 +25,7 @@
       </template>
     </div>
     <!-- 자식 컴포넌트 없을 경우 -->
-    <div :class="[`space child${deepth}th`]" v-else>하위 페이지가 없습니다</div>
+    <div :class="[`space  scroll child${deepth}th`]" v-else><span>하위 페이지가 없습니다</span></div>
   </template>
 
   
