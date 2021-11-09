@@ -14,7 +14,6 @@ export async function putWorkspace({spaceId,title,content,parentId=undefined}){
     headers: headers,
     data:param
   })
-  console.log('수정',data)
   // data= 수정된 객체 { 아이디, 타이틀, 상세내용}
   return data
 }

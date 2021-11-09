@@ -17,7 +17,6 @@ export async function postWorkspace({parentId,title,content}){
     headers: headers,
     data:param
   })
-  // console.log('생성',data)
   // data= { 아이디, 타이틀, 상세내용}
   return data
 }

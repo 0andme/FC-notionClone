@@ -8,7 +8,6 @@ export async function getAllWorkspace() {
     method: 'GET',
     headers: headers,
   })
-  // console.log('전체',data)
   // data= [ { 아이디, 타이틀, 자식 항목 배열[{아이디,타이들}]},,{ } ]
   return data
 }

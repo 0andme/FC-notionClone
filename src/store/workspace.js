@@ -45,7 +45,6 @@ export default{
     // - edit
     async editWorkspace({dispatch},payload){
       // payload= spaceId,title,content
-      // console.log(payload)
       putWorkspace(payload).then(()=>{
         this.dispatch('getAlldata')
       })

@@ -31,9 +31,6 @@ export default {
       default:undefined
     }
   },
-  created(){
-    // console.log('전달받은 부모',this.parentId)
-  },
   data(){
     return{
       isShow:false,

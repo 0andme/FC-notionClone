@@ -74,7 +74,6 @@ export default {
          spaceId:this.space.id,
          parentId: this.parentId
       }
-      console.log('data?',data)
       this.$store.dispatch('delWorkspace',data) 
     }  
   }

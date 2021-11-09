@@ -9,7 +9,6 @@ export async function deleteWorkspace(workspaceId) {
     method: 'DELETE',
     headers: headers,
   })
-  // console.log('del',data)
   // data= 워크스페이스 삭제 여부
   return data
 }

@@ -56,15 +56,12 @@ export default {
         title,
         content
       }
-      console.log(data)
       this.$store.dispatch('editWorkspace',data).then(()=>{
         this.inputTitle=this.selectedPage.title
         this.inputContent=this.selectedPage.content
       })
     },
     getSpaceTitle(el){
-      console.log(el.target.innerText)
-
       this.inputTitle=el.target.innerText
     },
     getSpaceContent(el){
