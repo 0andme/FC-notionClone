@@ -1,14 +1,14 @@
 <template>
   <slot name="activator"></slot>
-  <teleport to ="body">
+  <!-- <teleport to ="body"> -->
     <template v-if="modelValue">
-    <div class="modal" @click.self="offModal">
-      <div class="modalBox" @click.stop>
+    <div :class="[`modal ${modalName}`]" @click.self="offModal">
+      <div :class="[`modalBox ${modalName}`]" @click.stop>
         <slot></slot>
       </div> 
     </div> 
   </template>  
-  </teleport>
+  <!-- </teleport> -->
 </template>
 
 <script>
@@ -17,6 +17,9 @@ export default {
     modelValue:{
       type:Boolean,
       default:false
+    },
+    modalName:{
+      type:String
     }
   },
   emits:['update:modelValue'],
@@ -51,24 +54,3 @@ export default {
   
 }
 </script>
-<style lang="scss" scoped>
-.modal{
-  position: fixed;
-  top: 0;
-  bottom:0;
-  left:0;
-  right: 0;
-  background-color: rgba(black,.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  .modalBox{
-    width: 400px;
-    height:400px ;
-    background-color: orange;
-
-
-  }
-}
-</style>
