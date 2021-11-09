@@ -1,0 +1,53 @@
+.modal{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  &.add{
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left:0;
+    right: 0;
+  
+    background-color: rgba(black,.4);
+  }
+  &.control{
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left:0;
+    right: 0;
+    background-color: rgba(black,.4);
+    
+      
+  }
+  
+  .modalBox{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    &.add{
+      width: 50%;
+      height:calc(100% - 144px) ;
+      padding: 120px;
+      box-sizing: border-box;
+      
+    }
+    &.control{
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      button{
+        font-size: 1.5rem;
+        padding: 4px;
+        &:hover{background-color: rgba(55,53,47,.08);}
+        span{margin-left: 10px;}
+      }
+    }
+  }
+}
