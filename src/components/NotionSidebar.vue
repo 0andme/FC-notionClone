@@ -1,10 +1,20 @@
 // sideBar
+// ㄴ userInfo
 // ㄴ workspaceWrap
 //   ㄴ workspaceHeader
 //   ㄴ workspaceList 
 <template>
 <div class="sideBar">
-  <!-- <div class="userInfo"></div> -->
+  <!-- 유저 헤더 -->
+  <header class="userInfo">
+    <div class="userImg">
+      <img src="images/userImg.jpg" alt="Img"/>
+      </div>
+    <div class="userData">
+      <div class="userData__name">0andme의 Notion</div>
+      <div class="userData__email">yu00mi97@gmail.com</div>
+    </div>
+  </header>
   <div  class="workspaceWrap">
     <!-- 워크스페이스 헤더 -->
     <div class="workspaceHeader" @mouseover.self="isHover=true" @mouseleave.self="isHover=false" >
@@ -14,12 +24,11 @@
     </div>
 
     <!-- 워크스페이스 목록 -->
-    <ul class="workspaceList" >
+    <div class="workspaceList scroll" >
       <template  v-for="space in this.$store.state.workspace.allSpaceList" :key="space.id">
         <WorkspaceItem :parentId="undefined" :deepth="deepth" :space="space"/>
       </template>
-
-    </ul>
+    </div>
   </div>
 </div>
   
@@ -46,19 +55,4 @@ export default {
   
 }
 </script>
-<style lang="scss" scoped>
 
-.sideBar{
-  width: 240px;
-
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  
-  background-color: #f7f6f3;
-  .workspaceHeader{
-    
-  }
-}
-</style>
