@@ -94,35 +94,47 @@
         align-items: center;
         
         .title{
+          // width: 10%;
           flex-grow: 1;
           color: #343a40;
+          overflow-x: scroll;
+          &.scroll {
+            -ms-overflow-style: none;
+            /* Internet Explorer */
+            scrollbar-width: none;
+            /* Firefox 64 */
+        }
+        &.scroll::-webkit-scrollbar {
+            /* 크롬 사파리*/
+            display: none;
+        }
         }
         &:hover{background-color: rgba(55,53,47,.08);}
         &.child1th{padding-left: 25px}
         &.child2th{padding-left: calc(25*2px)}
         &.child3th{padding-left: calc(25*3px)}
       }
+      
+    }
+    // 워크스페이스 목록 내 모든 버튼
+    .btn{
+      button{
+        height: 20px;
+        width: 20px;
+        font-size: 1rem;
+        color: #868e96;
+        text-align: center;
+      }
+      border-radius: 3px;
+      &:hover{
+        border: 1px solid #868e96;
+        background-color: rgba(55,53,47,.08);
+      }
+      &.toggle{margin-right: 5px;}
+      &.add{
+        margin-left: 10px;
+        border: 1px solid #adb5bd;
 
-      // 워크스페이스 목록 내 모든 버튼
-      .btn{
-        button{
-          height: 20px;
-          width: 20px;
-          font-size: 1rem;
-          color: #868e96;
-          text-align: center;
-        }
-        border-radius: 3px;
-        &:hover{
-          border: 1px solid #868e96;
-          background-color: rgba(55,53,47,.08);
-        }
-        &.toggle{margin-right: 5px;}
-        &.add{
-          margin-left: 10px;
-          border: 1px solid #adb5bd;
-
-        }
       }
     }
   }
