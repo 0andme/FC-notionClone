@@ -2,7 +2,7 @@
   <Loader v-if="!fetched"/>
   <template v-else>
     <NotionSidebar/>
-    <!-- <NotionTopbar/> -->
+    <NotionTopbar/>
     <NotionFrame/>
    </template>
 </template>
