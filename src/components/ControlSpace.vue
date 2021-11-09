@@ -1,18 +1,16 @@
 <template>
 <!-- 모달 -->
-  <TheModal v-model="isShow">
+  <TheModal  :modalName="modalName" v-model="isShow">
     <template #activator>
       <div v-if="controlBtnCheck()" class="btn">
-        <button   @click='changeValue'>
+        <button title="제목 수정, 삭제하기"   @click='changeValue'>
           <i class="fas fa-ellipsis-h"></i>
         </button>
       </div>
     </template>
     <template #default>
-      <div class="controler">
-        <div class="editBtn"><button>수정</button></div>
-        <div class="delBtn"><button @click="delSpace">삭제</button></div>
-      </div>
+      <button><i class="fas fa-edit"></i><span>제목 바꾸기</span></button>
+      <button @click="delSpace"><i class="far fa-trash-alt"></i><span>삭제</span></button>
     </template>
   </TheModal>
 </template>
@@ -42,7 +40,8 @@ export default {
     return{
       isShow:false,
       spaceTitle:'',
-      spaceContent:''
+      spaceContent:'',
+      modalName:'control'
 
     }
   },
