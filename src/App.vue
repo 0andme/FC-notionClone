@@ -1,29 +1,34 @@
-<template>
-<NotionSidebar/>
-<!-- NotionTopbar버튼이 눌리면 사이드바 열리게 열리고 나면 버튼은 사라져야함 -->
-<!-- <NotionTopbar/> -->
-<NotionFrame/>
+<template >
+  <Loader v-if="!fetched"/>
+  <template v-else>
+    <NotionSidebar/>
+    <!-- <NotionTopbar/> -->
+    <NotionFrame/>
+   </template>
 </template>
 
 <script>
 import NotionFrame from '~/components/NotionFrame'
 import NotionSidebar from '~/components/NotionSidebar'
 import NotionTopbar from '~/components/NotionTopbar'
-
+import Loader from '~/components/Loader'
 export default {
   components:{
     NotionFrame,
     NotionSidebar,
-    NotionTopbar
+    NotionTopbar,
+    Loader
   },
   data() {
     return {
-      
+      fetched:false
     }
   },
   created(){
     // 데이터 가져오기
-      this.$store.dispatch('getAlldata')
+      this.$store.dispatch('getAlldata').then(()=>{
+        setTimeout(()=>{this.fetched=true},1000)
+      })
       
   }
 }
