@@ -2,9 +2,11 @@
 <!-- 모달 -->
   <TheModal v-model="isShow">
     <template #activator>
-      <button v-if="addBtnCheck()" @click='changeValue'>
-        <i class="far fa-plus-square"></i>
-      </button>
+      <div v-if="addBtnCheck()" class="btn add">
+        <button   @click='changeValue'>
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
     </template>
     <template #default>
       <div class="editor">

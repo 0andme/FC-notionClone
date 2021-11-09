@@ -1,33 +1,34 @@
 <template>
-
-<div @mouseover.self="isHover=true" @mouseleave.self="isHover=false">
+<div :class="[`space child${deepth}th `]" @mouseover.self="isHover=true" @mouseleave.self="isHover=false">
+  <!-- <div > -->
   <!-- 토글 버튼 -->
-  <button @click="isOpen=!isOpen">
+  <div class="btn toggle">
+    <button  @click="isOpen=!isOpen">
     <i v-if="isOpen" class="fas fa-caret-down"></i>
     <i v-if="!isOpen" class="fas fa-caret-right"></i>
   </button>
+  </div>
   <!-- 워크 스페이스 타이틀 -->
-  <span>{{space.title}}</span>
+  <span class="title">{{space.title}}</span>
   <!-- 워크스페이스 수정 삭제 컴포넌트 -->
   <ControlSpace :space="space" :parentId='parentId' :isHover="isHover"  @changeIsHover='changeIsHover'/>
   <!-- 워크스페이스 추가 컴포넌트 -->
   <template  v-if="deepth<3"> 
     <AddWorkspace  :parentId='space.id' :isHover="isHover"  @changeIsHover='changeIsHover'/>
   </template>
-
+</div>
   <!-- 토글 버튼이 열렸을 경우 -->
   <template v-if="isOpen">
     <!-- 자식 컴포넌트 있을 경우 -->
     <div v-if="space.children" >
-      <template v-for="child in space.children" :key="child.id">
+      <template class="hidden" v-for="child in space.children" :key="child.id">
         <WorkspaceItem  :deepth="deepth+1" :parentId="space.id" :space="child" />
       </template>
     </div>
     <!-- 자식 컴포넌트 없을 경우 -->
-    <div v-else>하위 페이지가 없습니다</div>
+    <div :class="[`space child${deepth}th`]" v-else>하위 페이지가 없습니다</div>
   </template>
 
-</div>
   
 </template>
 <script>

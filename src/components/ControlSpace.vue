@@ -2,9 +2,11 @@
 <!-- 모달 -->
   <TheModal v-model="isShow">
     <template #activator>
-      <button v-if="controlBtnCheck()" @click='changeValue'>
-        <i class="fas fa-ellipsis-h"></i>
-      </button>
+      <div v-if="controlBtnCheck()" class="btn">
+        <button   @click='changeValue'>
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+      </div>
     </template>
     <template #default>
       <div class="controler">
