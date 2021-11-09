@@ -1,18 +1,16 @@
 <template>
 <!-- 모달 -->
-  <TheModal v-model="isShow">
+  <TheModal  :modalName="modalName" v-model="isShow">
     <template #activator>
       <div v-if="addBtnCheck()" class="btn add">
-        <button   @click='changeValue'>
+        <button @click='changeValue' title="하위 페이지 추가하기">
           <i class="fas fa-plus"></i>
         </button>
       </div>
     </template>
     <template #default>
-      <div class="editor">
-        <div @input="getSpaceTitle" class="spaceTitle" placeholder='제목없음' contenteditable></div>
-        <div @input="getSpaceContent" class="spaceContent" placeholder="엔터키를 눌러 빈 페이지를 사용하세요" contenteditable></div>  
-      </div>
+        <div @input="getSpaceTitle" class="spaceTitle" placeholder='제목없음' contenteditable="true"></div>
+        <div @input="getSpaceContent" class="spaceContent" placeholder="엔터키를 눌러 빈 페이지를 사용하세요" contenteditable="true"></div>  
     </template>    
   </TheModal>
 </template>
@@ -40,7 +38,8 @@ export default {
     return{
       isShow:false,
       spaceTitle:'',
-      spaceContent:''
+      spaceContent:'',
+      modalName:'add'
 
     }
   },
@@ -79,14 +78,14 @@ export default {
         title:this.spaceTitle,
         content:this.spaceContent
       }
-      this.$store.dispatch('addWorkspace',data).then(()=>{
+        this.$store.dispatch('addWorkspace',data).then(()=>{
         this.spaceTitle=''
         this.spaceContent=''
       })
 
     },
     getSpaceTitle(el){
-      this.spaceTitle=el.target.textContent
+      this.spaceTitle=el.target.innerText
     },
     getSpaceContent(el){
       this.spaceContent=el.target.innerHTML
@@ -95,16 +94,3 @@ export default {
 }
 
 </script>
-<style lang="scss" scoped>
-
-
-.editor .spaceTitle:empty:before,
-.editor .spaceContent:empty:before
-{
-  content: attr(placeholder);
-  display: block;
-  color: gray;
-  
-}
-
-</style>
