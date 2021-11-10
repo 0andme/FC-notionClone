@@ -19,14 +19,7 @@ export default {
     selectedPage(){
  
       return this.$store.state.workspace.selectedSpace
-    },
-    oldTitle(){
-      return this.$store.state.workspace.selectedSpace.title
-    },
-    oldContent(){
-      return this.$store.state.workspace.selectedSpace.content
     }
-  
   },
   methods:{
     isSelect(){
@@ -41,14 +34,14 @@ export default {
         title=this.inputTitle===''?'제목없음':this.inputTitle
       }
       else{//입력 아예 없음
-        title=this.oldTitle
+        title=this.selectedPage.title
       }
       // 내용 확인
       if(this.inputContent!==undefined){
         content=this.inputContent
       }
       else{
-        content=this.oldContent
+        content=this.selectedPage.content
       }
 
       const data={
@@ -56,9 +49,9 @@ export default {
         title,
         content
       }
-      this.$store.dispatch('editWorkspace',data).then(()=>{
-        this.inputTitle=this.selectedPage.title
-        this.inputContent=this.selectedPage.content
+        this.$store.dispatch('editWorkspace',data).then(()=>{
+        this.inputTitle=undefined
+        this.inputContent=undefined
       })
     },
     getSpaceTitle(el){
